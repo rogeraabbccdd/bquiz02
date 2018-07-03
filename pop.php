@@ -27,7 +27,7 @@
 				<tr>
 					<td><?=$row["name"]?></td>
 					<td class="article"><?=$part?><span class="all" style="display:none"><?=$row["text"]?></span></td>
-					<td><span id="lik<?=$row['id']?>"><?=$likes?></span>個人說<img src="images/02B03.jpg" width="20px"/></td>
+					<td><span id="lik<?=$row['id']?>"><?=$likes?></span>個人說<img src="home_files/02B03.jpg" width="20px"/></td>
 					<?php
 						if(isset($_SESSION["acc"]))
 						{
