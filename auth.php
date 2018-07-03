@@ -25,5 +25,7 @@
 		$result = mysqli_query($link, "update visit set count = count +1 where time = '".$today."'");
 		if(mysqli_affected_rows($link) < 1)
 			$result = mysqli_query($link, "insert into visit values(null, '".$today."', '1')");
+		
+		$_SESSION["visit"] = "123";
 	}
 ?>
