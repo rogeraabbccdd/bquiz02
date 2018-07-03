@@ -32,7 +32,7 @@
         	<img src="./home_files/02B01.jpg" width="100%" height="100%" alt="健康促進網 - 回首頁" title="健康促進網 - 回首頁">
         </div>
         <div id="mm">
-        	<div class="hal" id="lef" style="background-image:url(images/02B04.png)">
+        	<div class="hal" id="lef">
 			<?php
 				if(!empty($_GET["do"]) && (
 				($_GET["do"] == "admin") || 
