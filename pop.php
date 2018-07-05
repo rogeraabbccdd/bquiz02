@@ -27,7 +27,7 @@
 				<tr>
 					<td><?=$row["name"]?></td>
 					<td class="article"><?=$part?><span class="all" style="display:none"><?=$row["text"]?></span></td>
-					<td><span id="lik<?=$row['id']?>"><?=$likes?></span>個人說<img src="home_files/02B03.jpg" width="20px"/></td>
+					<td><span id="vie<?=$row['id']?>"><?=$likes?></span>個人說<img src="home_files/02B03.jpg" width="20px"/></td>
 					<?php
 						if(isset($_SESSION["acc"]))
 						{
@@ -35,13 +35,13 @@
 							if(mysqli_num_rows($result3) > 0) 
 							{
 								?>
-								<td><a onclick="like('<?=$row['id']?>', '1')" id="like<?=$row['id']?>">收回讚</a></td> 
+								<td><a onclick="good('<?=$row['id']?>', '2', '<?=$_SESSION["acc"]?>')" id="good<?=$row['id']?>">收回讚</a></td> 
 								<?php 
 							}
 							else 
 							{
 								?>
-								<td><a onclick="like('<?=$row['id']?>', '2')" id="like<?=$row['id']?>">讚</a></td> 
+								<td><a onclick="good('<?=$row['id']?>', '1', '<?=$_SESSION["acc"]?>')" id="good<?=$row['id']?>">讚</a></td> 
 								<?php 
 							}
 						}
@@ -79,20 +79,4 @@
 								$("#altt").hide()
 							}
 						)
-						function like(id, type)
-						{
-							$.post("api.php?do=like&id="+id, {id, type}, function(r){
-								console.log(r);
-								if(type === '2')
-								{
-									$("#like"+id).text("收回讚").attr("onclick", "like('"+id+"', '1')");
-									$("#lik"+id).text( $("#lik"+id).text()*1+1 );
-								}
-								else
-								{
-									$("#like"+id).text("讚").attr("onclick", "like('"+id+"', '2')");
-									$("#lik"+id).text( $("#lik"+id).text()*1-1 );
-								}
-							})
-						}
                         </script>

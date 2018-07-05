@@ -12,17 +12,19 @@
 				echo "success";
 			}
 		}
-		elseif($_GET["do"]== "like")
+		elseif($_GET["do"]== "good")
 		{
-			if($_POST["type"] == 1)
+			if($_GET["type"] == "2")
 			{
+				echo "A";
 				$result = mysqli_query($link, "update article set good = good -1 where id = '".$_POST["id"]."'");
-				$result = mysqli_query($link, "delete from good where user = '".$_SESSION["acc"]."' and article = '".$_POST["id"]."'");
+				$result = mysqli_query($link, "delete from good where user = '".$_GET["user"]."' and article = '".$_POST["id"]."'");
 			}
 			else
 			{
+				echo "B";
 				$result = mysqli_query($link, "update article set good = good +1 where id = '".$_POST["id"]."'");
-				$result = mysqli_query($link, "insert into good values (null, '".$_SESSION["acc"]."', '".$_POST["id"]."')");
+				$result = mysqli_query($link, "insert into good values (null, '".$_GET["user"]."', '".$_POST["id"]."')");
 			}
 		}
 		elseif($_GET["do"]== "vote")

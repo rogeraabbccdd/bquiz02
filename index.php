@@ -3,10 +3,10 @@
 <!-- saved from url=(0039) -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <?php
+	$today = strtotime('today GMT+8');
 	include "sql.php";
 	include "auth.php";
 	$m = date("m 月 d 號 l",strtotime("now"));
-	$today = strtotime('today GMT+8');
 	
 	$result = mysqli_query($link, "select sum(count) as count from visit");
 	$totalvis = mysqli_fetch_array($result)["count"];
