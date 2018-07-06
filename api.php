@@ -16,13 +16,11 @@
 		{
 			if($_GET["type"] == "2")
 			{
-				echo "A";
 				$result = mysqli_query($link, "update article set good = good -1 where id = '".$_POST["id"]."'");
 				$result = mysqli_query($link, "delete from good where user = '".$_GET["user"]."' and article = '".$_POST["id"]."'");
 			}
 			else
 			{
-				echo "B";
 				$result = mysqli_query($link, "update article set good = good +1 where id = '".$_POST["id"]."'");
 				$result = mysqli_query($link, "insert into good values (null, '".$_GET["user"]."', '".$_POST["id"]."')");
 			}

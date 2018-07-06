@@ -1,5 +1,5 @@
 <p>請輸入信箱以查詢密碼</p>
-<form action="index.php?do=forget" method="post">
+<form action="" method="post">
 <input type="text" name="forgetmail">
 <input type="submit" value="尋找">
 <br>

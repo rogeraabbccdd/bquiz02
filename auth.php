@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$today = strtotime('today GMT+8');
 	if(!empty($_POST["acc"]) && !empty($_POST["pw"]))
 	{
 		$result = mysqli_query($link, "select * from user where acc = '".$_POST["acc"]."'");

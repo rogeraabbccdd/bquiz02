@@ -10,7 +10,7 @@
 		</tr>
 		<?php
 			$n = 1;
-			$result = mysqli_query($link, "select * from article where display = '1'");
+			$result = mysqli_query($link, "select * from article");
 			$num = mysqli_num_rows($result);
 			$pages = ceil($num/3);
 			if(empty($_GET["p"]))	$p = 1;
@@ -20,7 +20,7 @@
 			$np = $p+1;
 			if($lp < 1)	$lp = 1;
 			if($np < 1)	$np = $pages;
-			$result = mysqli_query($link, "select * from article order by good desc limit ".$s.",5");
+			$result = mysqli_query($link, "select * from article order by good desc limit ".$s.",3");
 			while($row = mysqli_fetch_array($result))
 			{
 				$result2 = mysqli_query($link, "select * from good where article = '".$row["id"]."'");

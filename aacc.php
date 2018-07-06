@@ -8,7 +8,8 @@
 			<td>刪除</td>
 		</tr>
 		<?php
-			$result = mysqli_query($link, "select * from user");
+		
+			$result = mysqli_query($link, "select * from user where type = 0");
 			while($row = mysqli_fetch_array($result))
 			{
 				echo "
