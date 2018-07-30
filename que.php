@@ -58,7 +58,7 @@
 					echo "
 							<tr>
 								<td>".$n.".".$row["text"]."</td>
-								<td>".$row["vote"]."票(".$rate."%)</td>
+								<td><span style='background-color:#333; width:".$rate."%; display:inline-block'>&nbsp;</span>".$row["vote"]."票(".$rate."%)</td>
 							</tr>";
 								
 					$n++;
