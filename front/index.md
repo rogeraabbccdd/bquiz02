@@ -24,10 +24,10 @@ description: 編輯首頁index.php
 	$m = date("m 月 d 號 l", $today);
 
 	// 總共訪客
-	$totalvis = fa(mq("select sum(count) as count from visit"))[0];
+	$totalvis = All("select sum(count) as count from visit")[0][0];
 	
 	// 今日訪客
-	$todayvis = fa(mq("select count from visit where time = '".$today."'"))[0];
+	$todayvis = All("select * from visit where time = '".$today."'")[0]["count"];
 ?>
 ```
 然後找到 `<div id="title">`，代入日期、訪客數和回首頁按鈕
