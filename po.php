@@ -7,3 +7,8 @@
 		$("#po").text($(this).text())
 	})
 </script>
+<style>
+.TabbedPanelsTab {
+	float: none !important;
+}
+</style>
